@@ -1,0 +1,22 @@
+# --- Rust build output ---
+/target/
+
+# --- PDF documents are never committed: real files routinely carry
+#     contracts, invoices, ID scans and signatures. Test PDFs are
+#     generated in code by the unit tests. ---
+*.pdf
+
+# --- Editors / OS ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Local environment overrides ---
+.env
+.env.local

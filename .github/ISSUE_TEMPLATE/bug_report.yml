@@ -1,0 +1,55 @@
+name: Bug report
+description: 报告一个可复现的缺陷
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请先确认问题在最新版本的 Release 上仍然存在。
+
+        > ⚠️ 请不要上传真实的 PDF 文档（合同、发票、证件扫描件等）——这类文件包含
+        > 姓名、证件号、金额、签名和印章等隐私信息。请使用自行脱敏后的文件，
+        > 或描述复现所需的最小结构。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 问题描述
+      description: 发生了什么？你期望发生什么？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开应用
+        2. 拖入 a.pdf、b.pdf
+        3. 点击「合并并保存…」
+        4. 看到 ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: Release 版本号，或 commit hash（自行构建时）
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options:
+        - Windows 11
+        - Windows 10
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: 日志 / 截图
+      description: 界面提示、错误弹窗或截图
+    validations:
+      required: false

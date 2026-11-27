@@ -1,0 +1,31 @@
+[package]
+name = "pdfbinder"
+version = "0.1.0"
+description = "A tiny PDF merger built with egui"
+authors = ["liuzhh"]
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+repository = "https://github.com/liuzhh/PDFBinder"
+homepage = "https://github.com/liuzhh/PDFBinder"
+# Desktop application, not a library: never publish to crates.io.
+publish = false
+
+[dependencies]
+# 不内置字体：界面完全使用系统字体，省下约 0.65 MB
+# （见 src/main.rs 的 install_cjk_font）
+eframe = { version = "0.37.0", default-features = false, features = ["glow"] }
+# 只合并页面，不需要 chrono 时间戳与 rayon 并行
+lopdf = { version = "0.47.0", default-features = false }
+rfd = "0.18.0"
+
+# 单文件发布：LTO + 体积优先 + 去除符号
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[build-dependencies]
+winresource = "0.1.34"

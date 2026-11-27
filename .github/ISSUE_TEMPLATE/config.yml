@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 构建问题（Rust / MSVC 环境）
+    url: https://rustup.rs/
+    about: 安装 Rust 工具链；Windows 构建还需要 Visual Studio 或 Build Tools 的 C++ 桌面开发工作负载
+  - name: PDF 规范（ISO 32000）
+    url: https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/PDF32000_2008.pdf
+    about: 了解 PDF 文件结构本身
